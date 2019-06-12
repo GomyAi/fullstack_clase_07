@@ -4,31 +4,45 @@
 Haz un algoritmo que escriba el nombre del alumno y la materia que reprobó*/
 
 
-const lista_alumnos = [
+const lista_alumnos = [{ 
+    nombre: 'Mary',
+    lista_materias: [ {
+        nombre: 'mate', 
+        cal: 5
+    }, 
     {
-        nombre: 'yesi',
-        lista_materias: [ {nombe: 'mate', cal: 5}, {nombe: 'historia', cal: 10}, {nombe: 'ingles', cal: 9}]   
+        nombre: 'historia', 
+        cal: 9
+    }, 
+    {   nombre: 'ingles', 
+        cal: 9
     }]
-
-
-let alumno = 0
-//imprime las materias que reprobaron
-//console.log(alumno)
-let menor= lista_alumnos[0].lista_materias[0].cal;
-let materiass = lista_alumnos[0].lista_materias.nombe
+},  
+{
+    nombre: 'yesi',
+    lista_materias: [{
+            nombre: 'mate', 
+            cal: 9
+        }, 
+        {
+            nombre: 'historia', 
+            cal: 6
+        }, 
+        {   nombre: 'ingles', 
+            cal: 5
+        }]
+    }] 
 let i = 0
-let j = 0
-let materia = 0
 for (i; i < lista_alumnos.length; i ++){
-    for (j; j < lista_alumnos[i].lista_materias.length; j ++){
-        materia = lista_alumnos[i].lista_materias[j].cal
-        
-       if (materia < 6){
-        materiass = materia
-        console.log (materiass + materia)
-       }
+    for(let j =0; j < lista_alumnos[i].lista_materias.length; j++ ){
+
+        if (lista_alumnos[i].lista_materias[j].cal < 6){
+           var materia = lista_alumnos[i].lista_materias[j].cal 
+           var nombreMateria = lista_alumnos[i].lista_materias[j].nombre
+           var fulanito = lista_alumnos[i].nombre
+            console.log ('El alumno : ' + fulanito + ' reprobó la materia ' + nombreMateria)
+
+        }
     }
 }
 
-
-//console.log (materia)
